@@ -1,0 +1,80 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(#0000, #f00);
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 2rem;
+    text-align: center;
+}
+
+main {
+    width: 600px;
+    padding: 2rem;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: rgba(230, 227, 221, 0.192);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 90px);
+    gap: 1rem;
+    perspective: 500px;
+}
+
+.card {
+    transform-style: preserve-3d;
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.877);
+    box-shadow: rgba(3, 17, 214, 0.575) 0px 0px 6px 2px;
+    border-radius: 6px;
+    transition: .3s transform ease-in;
+}
+
+.card img {
+    border-radius: 3px;
+    max-width: 100%;
+    position: absolute;
+    overflow: hidden;
+    object-fit:fill;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card_face-front {
+    transform: rotateY(180deg);
+}
+.card_face-back{
+    background-color: rgb(228, 218, 218);
+}
+main:has(#check1:checked) .game .card1,
+main:has(#check2:checked) .game .card2,
+main:has(#check3:checked) .game .card3,
+main:has(#check4:checked) .game .card4,
+main:has(#check5:checked) .game .card5,
+main:has(#check6:checked) .game .card6,
+main:has(#check7:checked) .game .card7,
+main:has(#check8:checked) .game .card8,
+main:has(#check9:checked) .game .card9,
+main:has(#check10:checked) .game .card10,
+main:has(#check11:checked) .game .card11,
+main:has(#check12:checked) .game .card12,
+main:has(#check13:checked) .game .card13,
+main:has(#check14:checked) .game .card14,
+main:has(#check15:checked) .game .card15,
+main:has(#check16:checked) .game .card16 {
+    transform: rotateY(180deg);
+}
+
+.check{
+    display: none;
+}
